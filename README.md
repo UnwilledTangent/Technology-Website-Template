@@ -1,5 +1,5 @@
 # Technology Website Template
-Intern at E-Speed Stabilizing Network Technology Pte. Ltd. 
+Interned at E-Speed Stabilizing Network Technology Pte. Ltd. 
 
 * Designed 2 website templates for E-Speed
 * Authored 3 tutorials for E-Speed, decreasing training time for other interns
