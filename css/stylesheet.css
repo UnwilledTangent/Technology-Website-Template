@@ -1,0 +1,167 @@
+﻿/* Table of Contents
+
+	1. Carousel/Main Picture
+	2. Secondary Images
+	3. Footer
+	4. Products Page's Main Picture
+	5. Products Page's Product Image
+		5.1. Cards in Product Page
+	6. Sample Buying Page
+	7. About Us Page
+	8. Navbar
+*/
+
+/* 1. Carousel/Main Picture */
+.spaceFromNavBar {
+	margin-top: 50px;
+}
+
+.fullScreenWidth {
+	width: 100%;
+}
+
+/* 2. Secondary Images */
+.secondaryImages {
+	width: inherit;
+}
+
+.secondaryImages img {
+	margin-top: 15px;
+	width: 100%;
+}
+
+.containerForIndividualSecondaryImages {
+	position: relative;
+}
+
+.secondaryImageTitle {
+	position: absolute;
+	bottom: 0px;
+	right: 15%;
+	left: 15%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+	z-index: 10;
+}
+
+/* 3. Footer */
+.footer {
+	margin-top: 15px;
+	width: inherit;
+}
+
+.footer a {
+	color: #7B7B7B;
+}
+
+.footerCopyright {
+	color: #7B7B7B;
+}
+
+/* 4. Products Page's Main Picture */
+.containerForMainPicture {
+	position: relative;
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.captionsForMainPicture {
+	color: #fff;
+	z-index: 100;
+	font-size: 40px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align:center;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px #000000;
+}
+
+/* 5. Products Page's Product Image */
+.productImage {
+	width: 100%;
+}
+
+/* 5.1. Cards in Product Page */
+
+/* Add some shadows to create a card effect */
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.captionsInCard {
+	padding: 0 16px;
+}
+
+/* Clear floats */
+.captionsInCard::after, .row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.button:hover {
+	background-color: #555;
+}
+
+.marginForProductCard {
+	margin-top: 20px;
+}
+
+.productName {
+	text-align:center;
+}
+
+/* 6. Sample Buying Page */
+
+.spaceForSampleBuyingPage {
+	margin-top: 20px;
+}
+
+.productName {
+	text-align: center;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.inline {
+	display:inline;
+}
+
+.spaceFromProductTitle {
+	margin-top: 10px;
+}
+
+.price {
+	margin-top: 0;
+}
+
+/* 7. About Us Page */
+.aboutUsDivision {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 60px;
+	text-align: center;
+}
+
+.aboutUsDivision p {
+	color:#7B7B7B;
+}
+
+.aboutUsDivision p span {
+	color: #000000;
+}
+
+/* 8. Navbar */
+.pointer {
+	cursor: pointer;
+}

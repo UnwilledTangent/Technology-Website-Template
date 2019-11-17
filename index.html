@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!--
+	IMPROVEMENTS TO BE MADE
+	- For small screen/mobile phones, apparently the submit button inside of the modal is shifted to the right, when it is supposed to be on the left
+		> Mission: Shift the sign up button to the left on small screens/mobile phones
+	- Make footer collapsible, so that it can be shown on phone (i.e. make footer responsive)
+	- Check copyright for glyph icon. Check whether it can be used for commercial purposes
+	- Do dropdown for "More" for navbar (if necessary)
+	- Try fixing button link on the phone product page
+		> Whenever the mouse cursor hovers over the button in the phone product page, the price will be underlined. This is inconsistent with
+			1. How Bootstrap's Button (Normally, when you hover over Bootstrap's Button, the text inside the button will not be underlined)
+			2. The button inside of the sample buying page
+		> Therefore, it looks ugly
+	- There's actually no Javascript or PHP being implemented in this website template (not withstanding the carousel in the index.html page). This causes the webpage to have no "logic" at all. I could add Javascript or PHP if needed.
+	- Right now, the design of the webpage looks bland. The original idea of creating the website is to make it look simple. There is beauty in simplicity. However, the final product turns out to be very bland.
+		> Perhaps I could learn something about "design for web development" before redoing the look of the website
+
+	IDEAS THAT COULD BE IMPLEMENTED
+	- News and Announcement
+	- Rating System
+	- Discussion Forum
+	- Registration and Login
+	- Sorting function for Product Page
+	- Change the top left of the webpage (which is the left of the navbar) into a company logo
+	- Add SQL for Products Page
+		> SQL Data in Server should sync with the Products Page
+		> One could do so by following this online tutorial as shown below
+		https://docs.microsoft.com/en-us/aspnet/web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
+		> Some other ways to do so includes
+			1. Making C# code to directly modify the ID/class of the asp/HTML elements
+			2. Make C# sessions and add the exact HTML code onto the asp page
+			3. Use Javascript, so that I can link HTML to Js to AJAX to C# (what does this mean? better go and ask Chye Leong)
+			4. Use Embedded Code Blocks (i.e. <% %>), and write C# code into it, so that the C# code can output the exact HTML code onto the asp page, hence displaying the data
+				~ As much as the above option sounds like the most feasible and simplest, do take note that, in general, using embedded code blocks for complex programming logic is not a best practice. This is because when the code is mixed on the page with the markup, it can be difficult to debug and maintain in the long run.
+				~ In addition, because the code is executed only during the page's render phase, I have substantially less flexibility than with code-behind or script-block code in scoping my code to the appropriate stage of page processing.
+
+	ADDITIONAL REFERENCES
+	
+	Website Templates
+	https://www.microsoft.com/en-sg
+	https://www.apple.com/sg
+	http://www.genesys.com/asia/omnichannel/customer-experience
+	https://www.ibm.com/us-en
+	https://www.oracle.com/index.html
+
+	To Be Implemented
+	https://www.apple.com/sg_edu_4911/shop/buy-mac/macbook
+	https://www.apple.com/sg_edu_4911/shop
+	https://www.courts.com.sg/computing-mobile/laptops/all-laptops?product_list_order=price
+
+	Good Website Designs to Implement
+	https://support.apple.com/en-sg
+	https://www.apple.com/sg/iphone
+	https://www.apple.com/sg/ipad
+	https://www.apple.com/sg/macbook
+	https://www.apple.com/sg/mac
+	https://www.apple.com/sg
+	https://apptopia.com
+
+	Unique Website Designs
+	https://www.apple.com/sg/imac-pro
+	https://www.xbox.com/en-sg
+
+	E-Speed Website
+	http://www.welluxsupplxies.com
+	http://www.lejeanhair.com
+
+	Concepts
+		Pagination
+		http://esimakin.github.io/twbs-pagination/#demo
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Electamas - Home Page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<!-- Optional Bootstrap theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+	<!-- Customised Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+	<!-- Important for Carousel? -->
+	<script src="jquery/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!-- For navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Electamas</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="#">Computers</a></li>
+					<li><a href="ProductsPage.html">Phones</a></li>
+					<li><a href="#">TVs</a></li>
+				</ul>
+				<!-- Modal Button -->
+				<ul class="nav navbar-nav navbar-right">
+					<!-- Is it ok to use glyphicon license? -->
+					<!-- TODO: Check copyright for glyphicon -->
+					<li>
+						<a href="" data-toggle="modal" data-target="#signUpModal">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+							Contact Us
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Modal -->
+	<div id="signUpModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Your Contact Information</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="name" type="text" class="form-control" name="name" placeholder="Your Name" />
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							<input id="email" type="text" class="form-control" name="email" placeholder="Email">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							<input id="phoneNumber" type="text" class="form-control" name="phoneNumber" placeholder="Phone Number">
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+							<input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Comment">
+						</div>
+						<br />
+						<div class="form-group">
+							<a href="AboutUsPage.html"><label class="control-label pointer">Our Contact Information</label></a>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="navbar-left btn btn-default" data-dismiss="modal">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The navbar is about 50px in height -->
+	<!-- For carousel -->
+	<div class="container spaceFromNavBar fullScreenWidth">
+		<div class="row">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<a href="ProductsPage.html" target="_blank">
+							<img src="images/Phone.jpg" alt="Phone">
+							<div class="carousel-caption">
+								<h3>Phones</h3>
+								<p>Wide Range of Brands</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="item">
+						<a href="#" target="_blank">
+							<img src="images/Gaming.jpeg" alt="Gaming">
+							<div class="carousel-caption">
+								<h3>Gaming</h3>
+								<p>For Your Entertainment</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="item">
+						<a href="#" target="_blank">
+							<img src="images/Computer.jpg" alt="Computer">
+							<div class="carousel-caption">
+								<h3>Computers</h3>
+								<p>Cheapest Price Anywhere</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Secondary Images -->
+	<div class="container secondaryImages">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<div class="containerForIndividualSecondaryImages">
+					<a href="ProductsPage.html">
+						<img src="images/Image1-1.jpg" alt="Space" class="card">
+						<div class="secondaryImageTitle">
+							<h3>Space</h3>
+							<p>Beyond Your Imagination</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="containerForIndividualSecondaryImages">
+					<a href="ProductsPage.html">
+						<img src="images/Image1-2.jpg" alt="Furnitures" class="card">
+						<div class="secondaryImageTitle">
+							<h3>Furnitures</h3>
+							<p>Total Comfort</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<div class="containerForIndividualSecondaryImages">
+					<a href="ProductsPage.html">
+						<img src="images/Image2-1.jpg" alt="Camera" class="card">
+						<div class="secondaryImageTitle">
+							<h3>Cameras</h3>
+							<p>Capturing Fun Moments</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="containerForIndividualSecondaryImages">
+					<a href="ProductsPage.html">
+						<img src="images/Image2-2.jpg" alt="Smart Home" class="card">
+						<div class="secondaryImageTitle">
+							<h3>Smart Homes</h3>
+							<p>Automate Your Life</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="container panel-footer footer">
+		<div class="row">
+			<div class="col-sm-3">
+				<h4>Shop</h4>
+				<nav>
+					<a href="#"><h6>Computers</h6></a>
+					<a href="#"><h6>Tablets</h6></a>
+					<a href="#"><h6>Phones</h6></a>
+					<a href="#"><h6>TVs</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>Account</h4>
+				<nav>
+					<a href="#"><h6>Login</h6></a>
+					<a href="#"><h6>Sign Up</h6></a>
+					<a href="#"><h6>Manage Your Account</h6></a>
+					<a href="#"><h6>Change Password</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>Our Values</h4>
+				<nav>
+					<a href="#"><h6>Accessibility</h6></a>
+					<a href="#"><h6>Environment</h6></a>
+					<a href="#"><h6>Privacy</h6></a>
+					<a href="#"><h6>Supplier Responsibility</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>About Us</h4>
+				<nav>
+					<a href="#"><h6>Newsroom</h6></a>
+					<a href="#"><h6>Leadership</h6></a>
+					<a href="#"><h6>Job Opportunities</h6></a>
+					<a href="#"><h6>Events</h6></a>
+					<a href="" data-toggle="modal" data-target="#signUpModal">
+						<h6>Contact Us</h6>
+					</a>
+					<a href="AboutUsPage.html"><h6>About Us</h6></a>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 footerCopyright"><h6>Copyright &#169; E-Speed Stabilizing Network Technology Pte. Ltd. All rights reserved.</h6></div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Electamas - IPhone X</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<!-- Optional Bootstrap theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+	<!-- Customised Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+	<!-- Important for Carousel? -->
+	<script src="jquery/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<!-- For navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Electamas</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Computers</a></li>
+					<li class="active"><a href="ProductsPage.html">Phones</a></li>
+					<li><a href="#">TVs</a></li>
+				</ul>
+				<!-- Modal Button -->
+				<ul class="nav navbar-nav navbar-right">
+					<!-- Is it ok to use glyphicon license? -->
+					<!-- TODO: Check copyright for glyphicon -->
+					<li>
+						<a href="" data-toggle="modal" data-target="#signUpModal">
+							<span class="glyphicon glyphicon-option-vertical"></span>
+							Contact Us
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Modal -->
+	<div id="signUpModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Your Contact Information</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="name" type="text" class="form-control" name="name" placeholder="Your Name" />
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							<input id="email" type="text" class="form-control" name="email" placeholder="Email">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							<input id="phoneNumber" type="text" class="form-control" name="phoneNumber" placeholder="Phone Number">
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+							<input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Comment">
+						</div>
+						<br />
+						<div class="form-group">
+							<a href="AboutUsPage.html"><label class="control-label pointer">Our Contact Information</label></a>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="navbar-left btn btn-default" data-dismiss="modal">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The navbar is about 50px in height -->
+	<div class="container spaceFromNavBar">
+		<div class="row spaceForSampleBuyingPage">
+			<div class="col-xs-12 col-sm-5">
+				<img src="Phone_Products_Images/android-android-phone-apps-47261.jpg" alt="Phone" class="productImage card" />
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<h2 class="inline">IPhone X</h2>
+				<ul class="inline">
+					<li class="spaceFromProductTitle">Screen Size: 5.8-inch display</li>
+					<li>Main Memory: 3 GB RAM</li>
+					<li>Internal Storage: 256 GB ROM</li>
+					<li>Operating System: iOS 11</li>
+					<li>Weight: 174 grams</li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<h1 style="margin-top:0;">S$1699</h1>
+				<button type="button" class="btn btn-default btn-block">Add to Bag</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="container panel-footer footer">
+		<div class="row">
+			<div class="col-sm-3">
+				<h4>Shop</h4>
+				<nav>
+					<a href="#"><h6>Computers</h6></a>
+					<a href="#"><h6>Tablets</h6></a>
+					<a href="#"><h6>Phones</h6></a>
+					<a href="#"><h6>TVs</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>Account</h4>
+				<nav>
+					<a href="#"><h6>Login</h6></a>
+					<a href="" data-toggle="modal" data-target="#signUpModal">
+						<h6>Sign Up</h6>
+					</a>
+					<a href="#"><h6>Manage Your Account</h6></a>
+					<a href="#"><h6>Change Password</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>Our Values</h4>
+				<nav>
+					<a href="#"><h6>Accessibility</h6></a>
+					<a href="#"><h6>Environment</h6></a>
+					<a href="#"><h6>Privacy</h6></a>
+					<a href="#"><h6>Supplier Responsibility</h6></a>
+				</nav>
+			</div>
+			<div class="col-sm-3">
+				<h4>About Us</h4>
+				<nav>
+					<a href="#"><h6>Newsroom</h6></a>
+					<a href="#"><h6>Leadership</h6></a>
+					<a href="#"><h6>Job Opportunities</h6></a>
+					<a href="#"><h6>Events</h6></a>
+					<a href="#"><h6>Contact Us</h6></a>
+					<a href="AboutUsPage.html"><h6>About Us</h6></a>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 footerCopyright"><h6>Copyright &#169; E-Speed Stabilizing Network Technology Pte. Ltd. All rights reserved.</h6></div>
+		</div>
+	</div>
+
+</body>
+</html>
